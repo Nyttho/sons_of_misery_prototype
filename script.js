@@ -49,46 +49,52 @@ async function displayStore() {
 
 async function displayTour() {
     const tourWrapper = document.querySelector(".tour-wrapper");
+
     try {
         const dates = await fetchTour();
-
         dates.sort((a, b) => new Date(a.date) - new Date(b.date));
-
         dates.forEach((tourDate) => {
-            const concert = document.createElement("div");
-            const dateObj = new Date(tourDate.date);
-
-            // Récupère le jour de la semaine
-            const dayOfWeek = dateObj.toLocaleString("en", { weekday: "short" });
-
-            // Récupère le mois
-            const month = dateObj.toLocaleString("en", { month: "short" });
-
-            // Récupère le jour du mois
-            const dayOfMonth = dateObj.getDate();
-
-            // Crée la chaîne de date au format "Thu, APR 25"
-            const formattedDate = `${dayOfWeek}, ${month.toUpperCase()} ${dayOfMonth}`;
-            concert.classList.add("concert");
-            const date = document.createElement("div");
-            date.classList.add("date");
-            date.textContent = formattedDate;
-            const city = document.createElement("div");
-            city.classList.add("city");
-            city.textContent = tourDate.city;
-            const venue = document.createElement("div");
-            venue.classList.add("venue");
-            venue.textContent = tourDate.venue;
-
-            concert.appendChild(date);
-            concert.appendChild(venue);
-            concert.appendChild(city);
-
+            const concert = createConcertElement(tourDate);
             tourWrapper.appendChild(concert);
-        })
+        });
     } catch (err) {
         console.error(err);
     }
+}
+
+function createConcertElement(tourDate) {
+    const concert = document.createElement("div");
+    const date = createDateElement(tourDate.date);
+    const city = createDivElement("city", tourDate.city);
+    const venue = createDivElement("venue", tourDate.venue);
+
+    concert.classList.add("concert");
+    concert.appendChild(date);
+    concert.appendChild(venue);
+    concert.appendChild(city);
+
+    return concert;
+}
+
+function createDateElement(dateString) {
+    const dateObj = new Date(dateString);
+    const dayOfWeek = dateObj.toLocaleString("en", { weekday: "short" });
+    const month = dateObj.toLocaleString("en", { month: "short" });
+    let dayOfMonth = dateObj.getDate();
+    if (dayOfMonth < 10) {
+        dayOfMonth = `0${dayOfMonth}`;
+    }
+    const year = dateObj.getFullYear().toString().slice(-2);
+    const formattedDate = `${dayOfWeek}, ${month.toUpperCase()} ${dayOfMonth}, ${year}`;
+    const dateElement = createDivElement("date", formattedDate);
+    return dateElement;
+}
+
+function createDivElement(className, textContent) {
+    const div = document.createElement("div");
+    div.classList.add(className);
+    div.textContent = textContent;
+    return div;
 }
 
 displayStore();
