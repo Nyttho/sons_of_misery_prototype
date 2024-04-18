@@ -1,0 +1,55 @@
+{
+    "concerts": [
+      {
+        "date": "2025-05-10",
+        "city": "Paris",
+        "venue": "Le Petit Palais"
+      },
+      {
+        "date": "2025-06-15",
+        "city": "Lyon",
+        "venue": "La Grande Scène"
+      },
+      {
+        "date": "2025-07-20",
+        "city": "Marseille",
+        "venue": "Le Riviera"
+      },
+      {
+        "date": "2025-08-05",
+        "city": "Bordeaux",
+        "venue": "Le Vignoble"
+      },
+      {
+        "date": "2025-09-12",
+        "city": "Nantes",
+        "venue": "L'Atlantique"
+      },
+      {
+        "date": "2025-10-25",
+        "city": "Toulouse",
+        "venue": "Le Ciel"
+      },
+      {
+        "date": "2025-11-08",
+        "city": "Nice",
+        "venue": "La Promenade"
+      },
+      {
+        "date": "2025-12-15",
+        "city": "Strasbourg",
+        "venue": "La Cathédrale"
+      },
+      {
+        "date": "2025-01-20",
+        "city": "Rennes",
+        "venue": "Le Château"
+      },
+      {
+        "date": "2025-02-28",
+        "city": "Lille",
+        "venue": "Le Moulin"
+      }
+    ]
+  }
+  

@@ -1,0 +1,333 @@
+/* ------- reset ----------- */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --------globals ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #030303;
+  color: #fff;
+  font-family: "Playfair Display", serif;
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.separation-line {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.708) 20%,
+    rgba(255, 255, 255, 0.708) 80%,
+    transparent 100%
+  );
+  margin: 2rem 0;
+}
+
+img {
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+p {
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
+}
+
+section h2 {
+  margin-bottom: 2rem;
+  font-size: clamp(1rem, 3vw, 2rem);
+  text-transform: uppercase;
+  font-style: bold;
+}
+
+/* ----------- nav -------------- */
+nav {
+  display: flex;
+  justify-content: flex-start;
+  position: fixed;
+  font-size: clamp(0.8rem, 2vw, 2rem);
+  color: white;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+nav a:hover {
+  color: rgb(201, 57, 57);
+}
+
+.logo {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.logo a {
+  display: inline-block;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  filter: invert(100);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  width: 100%;
+}
+
+nav li {
+  position: relative;
+  z-index: 5;
+}
+
+nav li::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 80%;
+  width: 0%;
+  border-bottom: 3px solid #fff;
+  transition: width ease-in-out 0.5s;
+}
+
+nav li:hover::before {
+  width: 100%;
+  border-bottom-color: rgb(201, 57, 57);
+}
+
+nav a {
+  font-family: "Rock Salt", cursive;
+}
+
+/* --------------hero ---------------- */
+.hero-banner {
+  position: relative;
+  height: 100vh;
+}
+
+.hero-banner h1 {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: invert(100);
+  width: 100%;
+  z-index: 3;
+}
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+
+/* -----------social links ------------- */
+
+.social-media-links {
+  margin-top: 1rem;
+}
+
+.social-media-links ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.social-media-links li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #3c3c3c;
+}
+
+.social-media-links li:hover {
+  background-color: #5c5c5c;
+}
+
+.social-media-links a {
+  padding: 0.7rem;
+  border-radius: 50%;
+}
+
+/* -----------store section --------------- */
+.store-grid {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  column-gap: 1%;
+  row-gap: 0.8vw;
+}
+
+.item {
+  position: relative;
+  max-width: 32%;
+  aspect-ratio: 1/1;
+  border: 1px solid #c3c3c3;
+  display: flex;
+}
+
+.item-illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity ease 0.5s;
+  font-weight: 700;
+}
+
+.item-title {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity ease 0.5s;
+}
+
+.item:hover .item-title,
+.item:hover .item-price {
+  opacity: 1;
+}
+
+/* ---------- tour -------------- */
+
+.tour-wrapper {
+  width: 100%;
+}
+
+.concert {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
+}
+
+.concert:not(:last-of-type) {
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.date {
+  min-width: 100px;
+}
+
+.venue {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.date,
+.city {
+  color: #b3b3b3;
+}
+
+.concert:hover {
+  background-color: #1c1c1c;
+}
+
+/* ----------- bio ------------- */
+
+.bio-section p:not(:last-of-type) {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* ---------contact -------------- */
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  font-size: clamp(1rem, 3vw, 2rem);
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.contact-section strong {
+  text-align: left;
+  width: 100%;
+}
+
+.contact-title {
+  text-decoration: underline;
+}
+
+.contact-mail {
+  font-style: italic;
+}
+/* ---------- footer ------------ */
+
+footer {
+  text-align: center;
+}
+
+.contact-box .separation-line {
+  width: 50%;
+}
