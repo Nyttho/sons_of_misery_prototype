@@ -149,8 +149,9 @@ nav a {
 }
 
 .hero-banner h1 {
+  display: flex;
   position: absolute;
-  top: 80%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   filter: invert(100);
