@@ -3,55 +3,55 @@
       {
         "item": "T-shirt noir du groupe",
         "price": 19.99,
-        "photo": "../assets/album_covers/black_shirt.jpeg",
+        "photo": "./assets/album_covers/black_shirt.jpeg",
         "type": "Clothes"
       },
       {
         "item": "Casquette brodée",
         "price": 15.49,
-        "photo": "../assets/album_covers/cap.jpeg",
+        "photo": "./assets/album_covers/cap.jpeg",
         "type": "Poster"
       },
       {
         "item": "Poster At the crossroad",
         "price": 5.99,
-        "photo": "../assets/album_covers/at_the_crossroad.jpeg",
+        "photo": "./assets/album_covers/at_the_crossroad.jpeg",
         "type": "Poster"
       },
       {
         "item": "Poster by the sword ...",
         "price": 5.99,
-        "photo": "../assets/album_covers/by_the_sword.jpeg",
+        "photo": "./assets/album_covers/by_the_sword.jpeg",
         "type": "Poster"
       },
       {
         "item": "Mug Sons of Misery",
         "price": 18.75,
-        "photo": "../assets/album_covers/mug.jpeg",
+        "photo": "./assets/album_covers/mug.jpeg",
         "type": "Object"
       },
       {
         "item": "T-shirt blanc du groupe",
         "price": 19.99,
-        "photo": "../assets/album_covers/white_shirt.jpeg",
+        "photo": "./assets/album_covers/white_shirt.jpeg",
         "type": "Clothes"
       },
       {
         "item": "Poster Paramnesia",
         "price": 5.99,
-        "photo": "../assets/album_covers/paramnesia.jpeg",
+        "photo": "./assets/album_covers/paramnesia.jpeg",
         "type": "Poster"
       },
       {
         "item": "Poster the fool & the witch",
         "price": 5.99,
-        "photo": "../assets/album_covers/the_fool_and_the_witch.jpeg",
+        "photo": "./assets/album_covers/the_fool_and_the_witch.jpeg",
         "type": "Poster"
       },
       {
         "item": "Album de noel",
         "price": 12.99,
-        "photo": "../assets/album_covers/chrismas.jpeg",
+        "photo": "./assets/album_covers/chrismas.jpeg",
         "type": "Album"
       }
     ]
