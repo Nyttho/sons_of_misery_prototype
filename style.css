@@ -208,6 +208,7 @@ nav a {
   border-radius: 50%;
   user-select: none;
   -webkit-user-drag: none;
+  display: block;
 }
 
 /* -----------store section --------------- */
@@ -333,4 +334,15 @@ footer {
 
 .contact-box .separation-line {
   width: 50%;
+}
+
+@media screen and (max-width: 415px) {
+  .social-media-links ul {
+    gap: 0.5rem;
+    font-size: 1.2rem;
+  }
+  .social-media-links li {
+    width: 40px;
+    height: 40px;
+  }
 }
