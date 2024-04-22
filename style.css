@@ -268,10 +268,6 @@ nav a {
   width: 100%;
 }
 
-.concert > div {
-  /* border: 1px solid red; */
-}
-
 .concert {
   display: flex;
   align-items: center;
