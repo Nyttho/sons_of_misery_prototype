@@ -83,6 +83,7 @@ nav {
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   padding: 0 1rem;
+  z-index: 99;
 }
 
 nav a:hover {
@@ -146,16 +147,18 @@ nav a {
 .hero-banner {
   position: relative;
   height: 100vh;
+  background-color: red;
+  display: flex;
 }
 
 .hero-banner h1 {
   display: flex;
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   filter: invert(100);
-  width: 400px;
+  width: clamp(100px, 25vw, 350px);
   z-index: 3;
 }
 .hero-banner img {
@@ -212,18 +215,23 @@ nav a {
 }
 
 /* -----------store section --------------- */
-.store-grid {
+/* .store-grid {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   column-gap: 1%;
   row-gap: 0.8vw;
+} */
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1vw;
+  height: auto;
 }
 
 .item {
   position: relative;
-  max-width: 32%;
-  aspect-ratio: 1/1;
   border: 1px solid #c3c3c3;
   display: flex;
 }
@@ -336,7 +344,7 @@ footer {
   width: 50%;
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 830px) {
   .social-media-links ul {
     gap: 0.5rem;
     font-size: 1.2rem;
@@ -344,5 +352,15 @@ footer {
   .social-media-links li {
     width: 40px;
     height: 40px;
+  }
+
+  .hero-banner {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 598px) {
+  .store-grid {
+    gap: 2vw;
   }
 }
